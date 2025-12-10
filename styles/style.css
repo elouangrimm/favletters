@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  /* --- Copy of Reference Palette --- */
+  --c050: #fafaf9;
+  --c100: #f5f5f4;
+  --c200: #e7e5e4;
+  --c300: #d6d3d1;
+  --c400: #a8a29e;
+  --c500: #78716c;
+  --c600: #57534e;
+  --c700: #44403c;
+  --c800: #292524;
+  --c900: #1c1917;
+  --c950: #0c0a09;
+
+  --shade-0: #06070a;
+  --shade-2: #181d27;
+  --shade-3: #212735;
+  --shade-5: #374362;
+  --shade-8: #9faecc;
+  --shade-10: #ffffff;
+
+  --background: var(--shade-2);
+  --foreground: var(--c200);
+  
+  --accent: #6366f1; /* indigo */
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--c950);
+    color: var(--c200);
+    font-family: var(--font-sans);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Header */
+header .heading {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--c100) 0%, var(--c400) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.05em;
+}
+
+.subtitle {
+    color: var(--c500);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Input Section */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    width: 100%;
+    background: var(--c900);
+    border: 1px solid var(--c800);
+    color: var(--c100);
+    font-size: 2rem;
+    font-family: var(--font-mono);
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.2em;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-glow), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+input[type="text"]::placeholder {
+    color: var(--c700);
+    opacity: 0.5;
+    letter-spacing: normal;
+    font-size: 1.5rem;
+}
+
+/* Status Section */
+.status-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.peer-list {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+.peer-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--c700);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.peer-dot.active {
+    background-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    transform: scale(1.2);
+}
+
+.peer-dot.me {
+    background-color: var(--c100);
+    border: 2px solid var(--accent);
+    box-sizing: content-box;
+    width: 6px;
+    height: 6px;
+}
+
+.status-text {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--c500);
+    background: var(--c900);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    border: 1px solid var(--c800);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--c500);
+    border: 1px solid var(--c700);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+    color: var(--c200);
+    border-color: var(--c400);
+    background: var(--c800);
+}
+
+.credits {
+    margin-top: auto;
+    font-size: 0.75rem;
+    color: var(--c600);
+}
+
+.credits a {
+    color: var(--c500);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.credits a:hover {
+    color: var(--accent);
+}
